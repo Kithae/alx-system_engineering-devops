@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# A bash script to display file contents such as `/etc/passwd`.
+#   you see user id, home directory path, and the username.
+
+thefile="/etc/passwd"
+while IFS= read -r line
+do
+    echo "$line" | cut -d":" -f1,3,6
+done < "$thefile"
