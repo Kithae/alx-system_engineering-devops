@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# A script to display in list format the current directory content
+
+thelist=$(ls)
+
+for a in $thelist; do
+  echo "$a" | cut -d '-' -f2
+done

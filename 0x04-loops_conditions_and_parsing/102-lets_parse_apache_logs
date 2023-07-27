@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# A script to parse in list format my apache log files 
+
+thefile="apache-access.log"
+awk -F' ' '{ print $1, $9}' $thefile

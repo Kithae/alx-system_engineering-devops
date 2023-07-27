@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# A script to parse in list format my Apache log files.
+#  Uses IP and HTTP status code for Groups visitors.
+#  Prints total occurrences, HTTP and IP
+# Sorts each log code.
+
+thefile="apache-access.log"
+awk -F' ' '{ print $1, $9}' $thefile | sort | uniq -c|sort -nr
